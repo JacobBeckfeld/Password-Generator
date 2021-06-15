@@ -8,6 +8,7 @@ function generatePassword(){
 
   var passwordLength = parseInt(prompt("How long would you like you password to be?"))
   console.log(passwordLength) 
+
   if (passwordLength < 8 || passwordLength > 128 ){ 
     alert("Your password length must be between 8 and 128 charecters");
     return;
@@ -18,10 +19,9 @@ function generatePassword(){
     var special = confirm("Would you like special charecters?");
     var numeric = confirm("Would you like numbers?");
     var password = "";
+    var finalPass = "";
 
     for (var i = 0; i < passwordLength; i++) {
-
-      
 
         if( lowerCase === true){
           password += letters[Math.floor(Math.random() * letters.length)];
@@ -41,14 +41,15 @@ function generatePassword(){
         }
     }
     console.log(password);
+
+    for (var i = 0; i < passwordLength; i++) {
+      finalPass += password.charAt(Math.floor(Math.random() * password.length));
+    } 
+
+    console.log(finalPass);
+
   }
 
-
-
-
-  if (lowerCase === true){
-  console.log(lowerCase + " lowercase is true");
-  }
 }
 // Write password to the #password input
 function writePassword() {
