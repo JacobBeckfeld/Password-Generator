@@ -48,7 +48,9 @@ function generatePassword(){
 
     console.log(finalPass);
 
+    return finalPass;
   }
+  return;
 
 }
 // Write password to the #password input
